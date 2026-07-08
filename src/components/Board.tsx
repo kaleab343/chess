@@ -58,31 +58,45 @@ function Board({ game, onMove, highlights }: BoardProps) {
     return PIECE_SYMBOLS[key] || '';
   };
 
+  const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  const ranks = ['8', '7', '6', '5', '4', '3', '2', '1'];
+
   return (
-    <div className="chess-board">
-      {board.map((row: any[], rowIndex: number) => 
-        row.map((piece: any, colIndex: number) => {
-          const squareName = getSquareName(rowIndex, colIndex);
-          const isLight = (rowIndex + colIndex) % 2 === 0;
-          const isSelected = selectedSquare === squareName;
-          const isHighlighted = highlights?.squares.includes(squareName);
+    <div className="board-wrapper">
+      <div className="chess-board">
+        {board.map((row: any[], rowIndex: number) => 
+          row.map((piece: any, colIndex: number) => {
+            const squareName = getSquareName(rowIndex, colIndex);
+            const isLight = (rowIndex + colIndex) % 2 === 0;
+            const isSelected = selectedSquare === squareName;
+            const isHighlighted = highlights?.squares.includes(squareName);
 
-          let highlightClass = '';
-          if (isHighlighted && highlights) {
-            highlightClass = `highlight-${highlights.type}`;
-          }
+            let highlightClass = '';
+            if (isHighlighted && highlights) {
+              highlightClass = `highlight-${highlights.type}`;
+            }
 
-          return (
-            <div
-              key={squareName}
-              className={`square ${isLight ? 'light' : 'dark'} ${isSelected ? 'selected' : ''} ${highlightClass}`}
-              onClick={() => handleSquareClick(squareName, rowIndex, colIndex)}
-            >
-              {getPieceSymbol(piece)}
-            </div>
-          );
-        })
-      )}
+            const showRankLabel = colIndex === 0;
+            const showFileLabel = rowIndex === 7;
+
+            return (
+              <div
+                key={squareName}
+                className={`square ${isLight ? 'light' : 'dark'} ${isSelected ? 'selected' : ''} ${highlightClass}`}
+                onClick={() => handleSquareClick(squareName, rowIndex, colIndex)}
+              >
+                {showRankLabel && (
+                  <div className="rank-label">{ranks[rowIndex]}</div>
+                )}
+                {showFileLabel && (
+                  <div className="file-label">{files[colIndex]}</div>
+                )}
+                <div className="piece-symbol">{getPieceSymbol(piece)}</div>
+              </div>
+            );
+          })
+        )}
+      </div>
     </div>
   );
 }

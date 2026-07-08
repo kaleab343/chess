@@ -768,3 +768,50 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Board Coordinates */
+.board-wrapper {
+    position: relative;
+}
+
+.rank-label {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    font-size: 0.7em;
+    font-weight: 600;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.square.light .rank-label {
+    color: #b58863;
+}
+
+.square.dark .rank-label {
+    color: #f0d9b5;
+}
+
+.file-label {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    font-size: 0.7em;
+    font-weight: 600;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.square.light .file-label {
+    color: #b58863;
+}
+
+.square.dark .file-label {
+    color: #f0d9b5;
+}
+
+.piece-symbol {
+    position: relative;
+    z-index: 5;
+}

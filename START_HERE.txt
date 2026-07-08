@@ -1,0 +1,56 @@
+╔════════════════════════════════════════════════════════════╗
+║   INTERACTIVE CHESS TEACHER - REACT + TYPESCRIPT          ║
+║   Quick Start Guide                                        ║
+╚════════════════════════════════════════════════════════════╝
+
+✅ Dependencies installed! You're ready to go.
+
+═══════════════════════════════════════════════════════════════
+
+TO START THE DEVELOPMENT SERVER:
+
+   npm run dev
+
+Then open your browser to the URL shown (usually http://localhost:5173)
+
+═══════════════════════════════════════════════════════════════
+
+WHAT'S INCLUDED:
+
+✓ Italian Game Opening - Complete guided lesson
+✓ Tactical Forks - 8 progressive puzzles
+✓ Interactive chess board with drag-and-drop
+✓ Quiz mode to test your skills
+✓ Full TypeScript support
+✓ Responsive design
+
+═══════════════════════════════════════════════════════════════
+
+PROJECT STRUCTURE:
+
+src/
+  components/     - React components (Board, LessonEngine, etc.)
+  data/           - Chapter content (easy to add more!)
+  types.ts        - TypeScript interfaces
+  App.tsx         - Main application
+
+═══════════════════════════════════════════════════════════════
+
+TO ADD MORE CHAPTERS:
+
+1. Open src/data/chapters.ts
+2. Add a new chapter following the existing format
+3. Save and refresh - it will appear on the main menu!
+
+═══════════════════════════════════════════════════════════════
+
+COMMANDS:
+
+  npm run dev      - Start development server
+  npm run build    - Build for production
+  npm run preview  - Preview production build
+  npm run lint     - Check TypeScript errors
+
+═══════════════════════════════════════════════════════════════
+
+Need help? Check SETUP.md for detailed instructions.
